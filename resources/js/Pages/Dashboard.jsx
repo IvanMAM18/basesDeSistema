@@ -3,9 +3,18 @@ import Menu from '@/Components/Menu';
 import InfoExtraTabla from '@/Components/InfoExtraTabla';
 import TablaTitulos from '@/Components/TablaTitulos';
 import { Head } from '@inertiajs/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Dashboard({ auth }) {
+    const [isMenuOpen, setIsMenuOpen] = useState(true); // Estado para controlar la visibilidad del menú
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 999);
+        useEffect(() => {
+                const handleResize = () => {
+                setIsSmallScreen(window.innerWidth <= 999);
+            };
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize);
+            }, []);
     return (
         <>
         <AuthenticatedLayout
@@ -15,10 +24,17 @@ export default function Dashboard({ auth }) {
             <Head title="Inicio-sesion inciada"/>
 
             <div className="relative w-full h-screen pt-4 bg-dots-darker bg-center bg-white dark:bg-white selection:bg-red-500 selection:text-white">
-                    <Menu></Menu>
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <InfoExtraTabla></InfoExtraTabla>
-                    <TablaTitulos></TablaTitulos>
+                <Menu isSmallScreen={isSmallScreen} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}></Menu>
+                {/* Contenido principal */}
+                <div
+                    className={`transition-all duration-300 bg-red-200 
+                        ${isSmallScreen ? 'w-full ml-0' : (isMenuOpen ? 'ml-[20%]' : 'ml-[8%]')}`}
+                >
+                    <h1 className="text-2xl font-bold">Contenido Principal</h1>
+                    <p>
+                        Este es el contenido principal de la página. El menú lateral puede
+                        mostrarse u ocultarse con el botón.
+                    </p>
                 </div>
             </div>
         </AuthenticatedLayout>
