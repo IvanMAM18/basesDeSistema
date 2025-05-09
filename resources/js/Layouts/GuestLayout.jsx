@@ -41,7 +41,7 @@ export default function Guest({ children }) {
                                 className="w-[15vw] object-cover"
                                 />
                             </div>
-                            <p className="absolute bottom-4 text-white text-xl ml-[3vw] text-[1vw]">
+                            <p className="absolute bottom-4 text-white ml-[3vw] text-[1.0vw]">
                                 H.XVIII AYUNTAMIENTO DE LA PAZ BAJ CALIFORNIA SUR.
                             </p>
                         </div>
@@ -50,14 +50,14 @@ export default function Guest({ children }) {
                     {/* Segundo Div */}
                     <div className={` ${isSmallScreen ? ("w-full") : ("w-[40%]")} flex flex-col justify-center items-center px-4`}>
                         <div className="text-center">
-                        <div className="uppercase font-bold text-[4.2vh]">{__('Log in')}</div>
+                        <div className="uppercase font-bold text-5xl">{__('Log in')}</div>
                         <br />
-                        <div className="text-[1.4vh] text-center px-[4vw]">
+                        <div className="text-sm text-center px-[4vw]">
                             INGRESA TU USUARIO Y CONTRASEÑA, SI NO CUENTA CON UN USUARIO CONTACTA AL
                             ADMINISTRADOR
                         </div>
                         </div>
-                        <div className="w-full mt-8 px-[4vw] py-4 mx-auto">{children}</div>
+                        <div className="w-full mt-8 px-[4vw] mx-auto">{children}</div>
                     </div>
                 </div>
             </div>

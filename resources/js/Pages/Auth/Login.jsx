@@ -48,7 +48,7 @@ export default function Login({ status, canResetPassword }) {
                             type="email"
                             name="email"
                             value={data.email}
-                            className="mt-1 block w-full pl-20 pr-4 py-4 text-[1.4vh]"
+                            className="mt-1 block w-full pl-20 pr-4 py-4 text-sm"
                             placeholder={__('Email')}
                             autoComplete="username"
                             isFocused={true}
@@ -78,7 +78,7 @@ export default function Login({ status, canResetPassword }) {
                         type={showPassword ? 'text' : 'password'} // Cambia entre 'text' y 'password'
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full pl-20 pr-4 py-4 text-[1.4vh]"
+                        className="mt-1 block w-full pl-20 pr-4 py-4 text-sm"
                         placeholder={__('Password')}
                         autoComplete="current-password"
                         isFocused={true}
