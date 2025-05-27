@@ -29,7 +29,7 @@ export default function Menu({ isSmallScreen, isMenuOpen, setIsMenuOpen }) {
                         <div className="w-full mt-20 text-center">
                             <img src="/../images/logoAguila.png" className="w-[5vw] mx-auto mb-[2vw]" />
                             <div className='text-[14px] px-2'>H.XVIII AYUNTAMIENTO DE LA PAZ B.C.S</div>
-                            <div className="text-[36px]">Gestor de Tareas</div>
+                            <div className="text-[36px]">Gestor de Tareas Hola</div>
                         </div>
                         <div className='m-[2vw]'>
                             <ul className="mt-8">
